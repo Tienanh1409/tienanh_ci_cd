@@ -34,6 +34,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<User> findAll() {
         Flux<User> users = userService.findAll();
+        log.info("Da chay");
         return users;
     }
 

@@ -15,6 +15,9 @@ variables:
 
 build-job:
   stage: build
+  rules:
+    - if: $CI_COMMIT_BRANCH != "main"
+
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
     - docker build --pull -t $CONTAINER_TEST_IMAGE .

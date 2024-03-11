@@ -18,6 +18,8 @@ build-job:
   rules:
     - if: $CI_COMMIT_BRANCH == "production"
       when: manual
+    - if: $CI_COMMIT_BRANCH != "production"
+      when: always
 
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"

@@ -7,4 +7,6 @@ COPY ./src /app/src
 
 RUN mvn clean package
 
+EXPOSE 8002
+
 CMD ["java", "-jar", "/app/target/Reactive-0.0.1-SNAPSHOT.jar"]

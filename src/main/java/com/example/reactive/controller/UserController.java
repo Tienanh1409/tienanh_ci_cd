@@ -49,4 +49,10 @@ public class UserController {
             userService.create(userDto);
         }
     }
+
+    @RequestMapping(value = "/tien", method = RequestMethod.GET, produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public ResponseEntity<Mono<String>> testJava() {
+        Mono<String> rs = Mono.just("Dinh Tien Anh ne!");;
+        return new ResponseEntity<Mono<String>>(rs, HttpStatus.OK);
+    }
 }
